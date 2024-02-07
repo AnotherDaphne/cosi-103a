@@ -10,10 +10,12 @@ import cinnamonrolls from "./cinnamonrolls.jpg";
 import kungpaochicken from "./kungpaochicken.jpeg";
 import agliolio from "./Shrimp-Aglio-Olio.jpeg";
 import menemen from "./Menemen.jpeg"; 
+import teampage from "./teamimage.jpg";
 
 
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+
 
 function cards() {
   return (
@@ -114,7 +116,25 @@ function cards() {
           </a>
         </Card.Body>
       </Card>
-    </CardGroup>
+
+      <Card >
+        <Card.Img variant="top" src={teampage} width="250px"/>
+        <Card.Body>
+          <Card.Title>TeamPage</Card.Title>
+          <Card.Text>
+            Our team page
+          </Card.Text>
+          <a href="TeamPage.html">
+            <Button>Go To TeamPage</Button>
+          </a>
+        </Card.Body>
+      </Card>
+
+  
+    </CardGroup> 
+    
+
+
   );
   
 /*function App() {
