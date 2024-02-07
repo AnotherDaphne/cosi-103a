@@ -23,6 +23,14 @@ test('Chickensalad.html has correct title', () => {
   expect(title.textContent).toBe('Chicken Salad Recipe');
 });
 
+test('Menemen.html has correct title', () => {
+  const html = fs.readFileSync(path.resolve(__dirname, '../public/Menemen.html'), 'utf8');
+  const dom = new JSDOM(html);
+  const { document } = dom.window;
+  
+  const title = document.querySelector('title');
+  expect(title.textContent).toBe('Menemen Recipe');
+}); 
 test('chickensalad.html contains specific text', () => {
   const html = fs.readFileSync(path.resolve(__dirname, '../public/Chickensalad.html'), 'utf8');
   const dom = new JSDOM(html);
@@ -96,7 +104,7 @@ test(' test waffles', () => {
  
 });
 
-test('kungpaochicken.html contains specific text', () => {
+test('test kungpaochicken', () => {
   const html = fs.readFileSync(path.resolve(__dirname, '../public/kungpaochicken.html'), 'utf8');
   const dom = new JSDOM(html);
   const { document } = dom.window;
@@ -104,4 +112,28 @@ test('kungpaochicken.html contains specific text', () => {
   const specificText = 'Sichuan Kung Pao Chicken 宫保鸡';
   expect(document.body.textContent).toContain(specificText);
 
+  const specificText2 = 'Ingredients';
+  expect(document.body.textContent).toContain(specificText2);
+  
+  const specificText3 = 'Instructions';
+  expect(document.body.textContent).toContain(specificText3);
+
 });
+
+test('test spaghetti', () => {
+  const html = fs.readFileSync(path.resolve(__dirname, '../public/spaghetti.html'), 'utf8');
+  const dom = new JSDOM(html);
+  const { document } = dom.window;
+
+  const specificText = 'Spaghetti Aglio e Olio with Shrimp';
+  expect(document.body.textContent).toContain(specificText);
+
+  const specificText2 = 'Ingredients';
+  expect(document.body.textContent).toContain(specificText2);
+  
+  const specificText3 = 'Instructions';
+  expect(document.body.textContent).toContain(specificText3);
+
+});
+
+

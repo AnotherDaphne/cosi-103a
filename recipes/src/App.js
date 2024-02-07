@@ -36,7 +36,7 @@ function cards() {
         <Card.Body>
           <Card.Title>Belgian Waffles</Card.Title>
           <Card.Text>
-            Description of recipe
+          Delicious Waffles with fruits!
           </Card.Text>
           <a href="Waffles.html">
             <Button>Go To Recipe</Button>
@@ -81,7 +81,7 @@ function cards() {
         <Card.Body>
           <Card.Title>Kung Pao Chicken</Card.Title>
           <Card.Text>
-            Description of recipe
+            Your new favorite if you like spicy and savory food!
           </Card.Text>
           <a href="kungpaochicken.html">
             <Button>Go To Recipe</Button>
@@ -94,7 +94,7 @@ function cards() {
         <Card.Body>
           <Card.Title>Cinnamon Rolls</Card.Title>
           <Card.Text>
-            Description of recipe
+            Aromatic and delicious delight!
           </Card.Text>
          <a href="CinnamonRolls.html">
             <Button>Go To Recipe</Button>
@@ -107,9 +107,9 @@ function cards() {
         <Card.Body>
           <Card.Title>Shrimp Aglio Olio</Card.Title>
           <Card.Text>
-            Description of recipe
+            Shrimp and pasta unite in a deliciously simple dish with flavor and texture.
           </Card.Text>
-          <a href="spagetti.html">
+          <a href="spaghetti.html">
             <Button>Go To Recipe</Button>
           </a>
         </Card.Body>
