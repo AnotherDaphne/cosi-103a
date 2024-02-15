@@ -110,7 +110,7 @@ const Team = () => {
             Hi!
             </p>
             <p>
-            
+            When i'm not dancing or listening to music, I'll probably be reading a book next to my squishmallows.
             </p>
           </Card.Body>
         </Accordion.Collapse>
