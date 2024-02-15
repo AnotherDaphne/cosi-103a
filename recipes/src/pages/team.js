@@ -37,7 +37,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 const Team = () => {
     
     return(
-      <div>
+      <div class="team">
         <title>Team Page</title>
         <h1>Meet the Team!</h1>
         <img class="page_img"src={teampage} alt="team"/>
