@@ -1,11 +1,21 @@
 import salad from "./images/chickensalad.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+
+
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 
+import Modal from 'react-bootstrap/Modal';
+import {useState} from 'react';
+
+
 
 const Chickensalad = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     return (
       <div>
         <h1>Chicken Salad Recipe</h1>
@@ -36,6 +46,30 @@ const Chickensalad = () => {
             <Link to="/chickensaladCooking">
               <Button>Cooking Mode</Button>
             </Link>
+
+
+        <Button variant="primary" onClick={handleShow}>
+            Nutritional Information
+            </Button>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Nutritional Information</Modal.Title>
+            </Modal.Header>
+          <Modal.Body>
+            {/*Info */}
+            <p>Calories: 200</p>
+            <p>Fat: 10g</p>
+            <p>Protein: 5g</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+
+
 
       </div>
     )

@@ -44,17 +44,15 @@ const Cheesecake = () => {
               <Button>Cooking Mode</Button>
             </Link>
            
-
-        <Button variant="primary" onClick={handleShow}>
-          Nutritional Information
-        </Button>
-
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Nutritional Information</Modal.Title>
-          </Modal.Header>
+            <Button variant="primary" onClick={handleShow}>
+            Nutritional Information
+            </Button>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Nutritional Information</Modal.Title>
+            </Modal.Header>
           <Modal.Body>
-            {/* Replace this with your actual nutritional information */}
+            {/*Info */}
             <p>Calories: 200</p>
             <p>Fat: 10g</p>
             <p>Protein: 5g</p>
