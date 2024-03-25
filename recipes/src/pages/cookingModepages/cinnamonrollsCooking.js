@@ -35,7 +35,7 @@ const CinnamonrollsCooking = () => {
   
     return (
       <div>
-        <h1>Chicken and Salad Recipe</h1>
+        <h1>Cinnamon Rolls Recipe</h1>
         <CookingMode slides={slides} />
       </div>
     );

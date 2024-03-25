@@ -40,7 +40,7 @@ const Team = () => {
       <div>
         <title>Team Page</title>
         <h1>Meet the Team!</h1>
-        <img class="page_img"src={teampage} alt="team"/>
+        <img className="page_img"src={teampage} alt="team"/>
 
         <Accordion defaultActiveKey="0">
       <Card>
@@ -49,7 +49,7 @@ const Team = () => {
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-          <img class="page_img"src={othello} alt="meowkenzie"/>
+          <img className="page_img"src={othello} alt="meowkenzie"/>
             <p>
             Hello, I am Othello. I am a cat. I like food.
               </p>
@@ -67,7 +67,7 @@ const Team = () => {
         </Card.Header>
         <Accordion.Collapse eventKey="1">
           <Card.Body>
-          <img class="page_img"src={Meowkenzie} alt="meowkenzie" width="300px"/>
+          <img className="page_img"src={Meowkenzie} alt="meowkenzie" width="300px"/>
           
             <p>
             I am a friendly feline. 
@@ -85,7 +85,7 @@ const Team = () => {
         </Card.Header>
         <Accordion.Collapse eventKey="2">
           <Card.Body>
-          <img class="page_img"src={tardis} alt="tardis" width="400px"/>
+          <img className="page_img"src={tardis} alt="tardis" width="400px"/>
           
             <p>
             Hi! I'm Tardis
@@ -104,7 +104,7 @@ const Team = () => {
         </Card.Header>
         <Accordion.Collapse eventKey="3">
           <Card.Body>
-          <img class="page_img"src={catdefault} alt="v" width="300px"/>
+          <img className="page_img"src={catdefault} alt="v" width="300px"/>
           
             <p>
             Hi!
