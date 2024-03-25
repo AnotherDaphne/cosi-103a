@@ -2,6 +2,7 @@ import {Outlet} from "react-router-dom";
 import { useState } from 'react';
 import GroceryList from "./grocerylist/grocerylist";
 import AddRecipe from './addrecipe/addrecipe'; 
+import RecipePage from './recipePage.js';
 import { Form, NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
 
 export default function Layout() {
@@ -18,6 +19,12 @@ export default function Layout() {
     setNewRecipe(recipe);
     setActiveComponent('addRecipe'); 
 
+  };
+
+  const [recipeData, setRecipeData] = useState(null);
+
+  const handleRecipeData = (data) => {
+    setRecipeData(data);
   };
 
   
@@ -50,6 +57,9 @@ export default function Layout() {
                   </NavDropdown.Item>
               </NavDropdown>
             </Nav>
+            {recipeData && <Button>{recipeData.title}</Button>}
+            <RecipePage onRecipeData={handleRecipeData} />
+
           </Container>
         </Navbar>
         <Outlet />
