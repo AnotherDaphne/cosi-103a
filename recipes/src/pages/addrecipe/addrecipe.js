@@ -1,7 +1,8 @@
 import React from 'react';
+import defaultImage from "./cheesecake.jpg";
 
-function AddRecipe({ recipe }) { // Access the 'recipe' prop
-  // Parse the JSON text
+
+function Recipe({ recipe }) {
   let recipeObject;
   try {
     recipeObject = JSON.parse(recipe);
@@ -10,12 +11,10 @@ function AddRecipe({ recipe }) { // Access the 'recipe' prop
     return <div>Invalid JSON</div>;
   }
 
-  // Use the JSON object
-  // ...
-
   return (
     <div>
       <h1>{recipeObject.title}</h1>
+      <img src={recipeObject.image || defaultImage} alt={recipeObject.title} /> {/* Use the default image if recipeObject.image is not defined */}
       <h2>Ingredients</h2>
       <ul>
         {recipeObject.ingredients.map((ingredient, index) => (
@@ -28,4 +27,4 @@ function AddRecipe({ recipe }) { // Access the 'recipe' prop
   );
 }
 
-export default AddRecipe;
+export default Recipe;
