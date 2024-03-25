@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import AddRecipe from './AddRecipe';
-import Recipe from './Recipe';
+import AddRecipe from './pages/addrecipe/addrecipe.js';
 import Layout from "./pages/layout.js";
 import Home from "./pages/home.js";
 import Menemen from "./pages/menemen.js";
@@ -48,7 +47,8 @@ export default function App() {
           <Route path= "wafflesCooking" element ={<WafflesCooking />} />
           <Route path= "menemenCooking" element ={<MenemenCooking />} />
           <Route path="/addrecipe" element={<AddRecipe />} />
-          <Route path="/recipe/:id" element={<Recipe />} />
+          {/* add this back when we have the recipe page figured out */}
+          {/* <Route path="/recipe/:id" element={<Recipe />} /> */}
           
 
           <Route path="*" element={<NoPage />} />

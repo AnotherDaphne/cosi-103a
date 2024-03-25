@@ -1,9 +1,9 @@
 import {Outlet} from "react-router-dom";
 import { useState } from 'react';
 import GroceryList from "./grocerylist/grocerylist";
-import AddRecipe from './addrecipe/addrecipe'; 
-import RecipePage from './recipePage.js';
-import { Form, NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
+import AddRecipe from './addrecipe/addrecipe.js'; 
+// import RecipePage from './addrecipe/recipePage.js';
+import { NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
 
 export default function Layout() {
   const [show, setShow] = useState(false);
@@ -21,11 +21,12 @@ export default function Layout() {
 
   };
 
-  const [recipeData, setRecipeData] = useState(null);
+  
+  // const [recipeData, setRecipeData] = useState(null);
 
-  const handleRecipeData = (data) => {
-    setRecipeData(data);
-  };
+  // const handleRecipeData = (data) => {
+  //   setRecipeData(data);
+  // };
 
   
 // Add a navigation bar to the layout
@@ -57,8 +58,10 @@ export default function Layout() {
                   </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            {recipeData && <Button>{recipeData.title}</Button>}
-            <RecipePage onRecipeData={handleRecipeData} />
+            {/* // Add a button to the navigation bar that displays the title of the recipe
+            // incomplete, add back once figured out how to pass data from RecipePage to Layout */}
+            {/* {recipeData && <Button>{recipeData.title}</Button>}
+            <RecipePage onRecipeData={handleRecipeData} /> */}
 
           </Container>
         </Navbar>
