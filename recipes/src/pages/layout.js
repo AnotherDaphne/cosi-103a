@@ -1,16 +1,22 @@
 import {Outlet} from "react-router-dom";
 import { useState } from 'react';
 import GroceryList from "./grocerylist/grocerylist";
+import AddRecipe from './addrecipe/addrecipe'; 
 import { Form, NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
 
 export default function Layout() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [newRecipe, setNewRecipe] = useState(null);
+  const [activeComponent, setActiveComponent] = useState('home');
   
   function handleRecipeShow() {
     let text;
-    let newRecipe = prompt("Enter the JSON of the new recipe: ", text);
+    let recipe = prompt("Enter the JSON of the new recipe: ", text);
+    setNewRecipe(recipe);
+    setActiveComponent('addRecipe'); 
 
   };
 
@@ -22,11 +28,13 @@ export default function Layout() {
           <Container>
             <Navbar.Brand to="/">😋Tasty Recipes</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/" onClick={() => setActiveComponent('home')}>Home</Nav.Link>
+              {/* <Nav.Link href="/">Home</Nav.Link> */}
               <Nav.Link href="/team">Meet the Team</Nav.Link>
               <Nav.Link variant="primary" onClick={handleShow}>
                 Grocery List
               </Nav.Link>
+              {activeComponent === 'addRecipe' && <AddRecipe recipe={newRecipe} />} {/* Only render AddRecipe if activeComponent is 'addRecipe' */}
               <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
                   <p></p>
