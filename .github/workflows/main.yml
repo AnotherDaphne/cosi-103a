@@ -27,9 +27,9 @@ jobs:
         uses: azure/login@v1
         with:
           auth-type: IDENTITY
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: 53866a2b-9d07-42f1-8065-3a72244fd7e7
+          tenant-id: 02e496e0-bb8f-4ec3-bf4d-6e3cd4bd4ba4
+          subscriptionId: aa8cd2f3-bd4c-432d-827a-bcf15d38cbbd
 
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@v1
