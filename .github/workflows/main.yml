@@ -36,4 +36,4 @@ jobs:
           appSourcePath: recipes/src
           acrName: registry103a
           containerAppName: recipecontainerapp
-          resourceGroup: cosi103-a
+          resourceGroup: cosi-103a
