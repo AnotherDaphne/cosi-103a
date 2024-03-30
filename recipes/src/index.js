@@ -22,7 +22,6 @@ import Team from "./pages/team.js";
 import NoPage from "./pages/nopage.js";
 import "./index.css";
 
-
 export default function App() {
   return (
     <BrowserRouter>

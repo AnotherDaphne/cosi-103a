@@ -11,6 +11,12 @@ This installs node_modules and packages to run the pages.
 ### `npm run build`
 This creates an optimized version of the code.
 
+### `npm install express`
+This installs express
+
+### `npm install express http-proxy-middleware`
+this installs the express middleware to run the proxy
+
 ### `cd ..`
 This changes the directory to outside the recipes folder. Finally, run:
 
