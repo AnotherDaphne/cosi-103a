@@ -2,7 +2,20 @@ import React from 'react';
 import Recipe from './recipesData.js';
 import cheesecake from "./images/cheesecake.jpg";
 
+
 const Cheesecake = () => {
+
+    const ingredients= [
+        {ingredient: "graham cracker crumbs"},
+        {ingredient: "butter"},
+        {ingredient: "cream cheese"},
+        {ingredient: "white sugar"},
+        {ingredient: "vanilla extract"},
+        {ingredient: "egg"},
+        {ingredient: "heavy cream"},
+    
+    ]
+
     const recipeData = {
         title: "Cheesecake Recipe",
         heading: "Classic Cheesecake Recipe",

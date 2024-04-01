@@ -3,6 +3,19 @@ import Recipe from './recipesData.js';
 import spaghetti from "./images/spaghetti.jpeg";
 
 const Spaghetti = () => {
+
+    const ingredients = [
+        { ingredient: "spaghetti" },
+        { ingredient: "olive oil" },
+        { ingredient: "garlic" },
+        { ingredient: "red pepper flakes" },
+        { ingredient: "fresh parsley" },
+        { ingredient: "shrimp" },
+        { ingredient: "lemon" },
+        { ingredient: "Parmesan cheese" },
+        { ingredient: "salt" },
+        { ingredient: "pepper" }
+    ]
     const recipeData = {
         title: "Aglio e Olio Recipe",
         heading: "Simple Aglio e Olio Recipe",

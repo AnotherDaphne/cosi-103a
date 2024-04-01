@@ -3,6 +3,18 @@ import Recipe from './recipesData.js';
 import menemen from "./images/Menemen.jpeg";
 
 const Menemen = () => {
+  const ingredients =[
+    {ingredient: "olive oil"},
+    {ingredient: "onion"},
+    {ingredient: "green peppers"},
+    {ingredient: "tomatoes"},
+    {ingredient: "eggs"},
+    {ingredient: "salt"},
+    {ingredient: "pepper"},
+    {ingredient: "red pepper flakes"},
+    {ingredient: "fresh parsley"}
+    
+  ]
   const recipeData = {
     title: "Menemen Recipe",
     heading: "Menemen Recipe",

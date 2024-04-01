@@ -3,6 +3,16 @@ import Recipe from './recipesData.js';
 import cinnamonrolls from "./images/cinnamonrolls.jpg";
 
 const Cinnamonrolls = () => {
+
+    const ingredients=[
+        {ingredient: "puff pastry"},
+        {ingredient: "butter"},
+        {ingredient: "brown sugar"},
+        {ingredient: "ground cinnamon"},
+        {ingredient: "powdered sugar"}, //optional
+        {ingredient: "milk"} //optional
+    
+    ]
     const recipeData = {
         title: "Cinnamon Rolls Recipe",
         heading: "Classic Cinnamon Rolls Recipe",
