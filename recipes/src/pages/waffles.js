@@ -2,20 +2,22 @@ import React from 'react';
 import Recipe from './recipesData.js';
 import waffles from "./images/waffles.jpg";
 
+export const ingredients = [
+    { ingredient: "all-purpose flour" },
+    { ingredient: "sugar" },
+    { ingredient: "baking powder" },
+    { ingredient: "baking soda" },
+    { ingredient: "salt" },
+    { ingredient: "buttermilk" },
+    { ingredient: "unsalted butter" },
+    { ingredient: "egg" },
+    { ingredient: "vanilla extract" },
+    { ingredient: "fresh fruits (strawberries, blueberries, bananas, etc.)" },
+    { ingredient: "maple syrup or powdered sugar for drizzling" }
+]
+
 const Waffle = () => {
-    const ingredients = [
-        { ingredient: "all-purpose flour" },
-        { ingredient: "sugar" },
-        { ingredient: "baking powder" },
-        { ingredient: "baking soda" },
-        { ingredient: "salt" },
-        { ingredient: "buttermilk" },
-        { ingredient: "unsalted butter" },
-        { ingredient: "egg" },
-        { ingredient: "vanilla extract" },
-        { ingredient: "fresh fruits (strawberries, blueberries, bananas, etc.)" },
-        { ingredient: "maple syrup or powdered sugar for drizzling" }
-    ]
+
     const recipeData = {
         title: "Belgian Waffles Recipe",
         heading: "Classic Belgian Waffles Recipe",
