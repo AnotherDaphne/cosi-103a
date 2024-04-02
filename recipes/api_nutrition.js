@@ -1,11 +1,11 @@
-import { ingredients } from './pages/waffles.js';
-import { ingredients } from './pages/spaghetti.js';
-import { ingredients } from './pages/cinnamonrolls.js';
-import { ingredients } from './pages/kungpaochicken.js';
-import { ingredients } from './pages/menemen.js';
-import { ingredients } from './pages/cheesecake.js';
-import { ingredients } from './pages/chickensalad.js';
-import { ingredients } from './pages/sphagetti.js';
+import { ingredients as waffle } from './pages/waffles.js';
+import { ingredients  as spaghetti} from './pages/spaghetti.js';
+import { ingredients as cinnamonrolls } from './pages/cinnamonrolls.js';
+import { ingredients as kungpaochicken } from './pages/kungpaochicken.js';
+import { ingredients as menemen } from './pages/menemen.js';
+import { ingredients as cheesecake} from './pages/cheesecake.js';
+import { ingredients as chickensalad } from './pages/chickensalad.js';
+
 /**
  
 //add sth to make sure 1000 requirest max- how to test this?
