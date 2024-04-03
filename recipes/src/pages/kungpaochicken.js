@@ -2,7 +2,26 @@ import React from 'react';
 import Recipe from './recipesData.js';
 import kungpaochicken from "./images/kungpaochicken.jpeg";
 
+export const ingredients = [
+    { ingredient: "chicken thighs" },
+    { ingredient: "soy sauce" },
+    { ingredient: "rice vinegar" },
+    { ingredient: "hoisin sauce" },
+    { ingredient: "cornstarch" },
+    { ingredient: "vegetable oil" },
+    { ingredient: "garlic" },
+    { ingredient: "ginger" },
+    { ingredient: "unsalted peanuts" },
+    { ingredient: "green onions" },
+    { ingredient: "red bell pepper" },
+    { ingredient: "green bell pepper" },
+    { ingredient: "water" },
+    { ingredient: "chili garlic sauce" },
+    { ingredient: "cooked rice" }
+]
+
 const Kungpaochicken = () => {
+
     const recipeData = {
         title: "Kung Pao Chicken Recipe",
         heading: "Sichuan Kung Pao Chicken 宫保鸡 Recipe",
