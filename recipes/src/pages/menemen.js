@@ -2,7 +2,21 @@ import React from 'react';
 import Recipe from './recipesData.js';
 import menemen from "./images/Menemen.jpeg";
 
+export const ingredients =[
+  {ingredient: "olive oil"},
+  {ingredient: "onion"},
+  {ingredient: "green peppers"},
+  {ingredient: "tomatoes"},
+  {ingredient: "eggs"},
+  {ingredient: "salt"},
+  {ingredient: "pepper"},
+  {ingredient: "red pepper flakes"},
+  {ingredient: "fresh parsley"}
+  
+]
+
 const Menemen = () => {
+
   const recipeData = {
     title: "Menemen Recipe",
     heading: "Menemen Recipe",
