@@ -1,6 +1,7 @@
 import React from 'react';
 import Recipe from './recipesData.js';
 import cheesecake from "./images/cheesecake.jpg";
+//import {getNutritionData} from './api_nutrition.js';
 
 export const ingredients= [
         
