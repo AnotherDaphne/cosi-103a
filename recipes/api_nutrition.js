@@ -23,10 +23,12 @@ function App() {
       .then(module => {
         
         return Promise.all(module.ingredients.map(ingredient => {
+          //map over the ingredients and make a request for each
           if( requestcount > 1000){ //1000 requests max
             console.log("Max requests reached");
             return;
           }
+          //api request to get nutrition data of the ingredient
           return axios.get(`api_endpoint/search?name=${ingredient}`)
           .then(response => {
             return response.data;
