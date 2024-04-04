@@ -1,9 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+
 import Recipe from './recipesData.js';
 import cheesecake from "./images/cheesecake.jpg";
-//import {getNutritionData} from './api_nutrition.js';
+
 
 export const ingredients= [
         
@@ -18,36 +18,8 @@ export const ingredients= [
 ]
 
 const Cheesecake = () => {
-    const [nutritionData, setNutritionData] = useState([]);
-    const [requestCount, setRequestCount] = useState(0);
+   
 
-    
-    useEffect(() => {
-        Promise.all(ingredients.map(ingredient => {
-            if(requestCount > 1000) {
-                console.log("Max requests reached");
-                return;
-            }
-            return axios.get(`api_endpoint/search?name=${ingredient.ingredient}`)
-            .then(response => {
-                const ingredientID = response.data[0].id;
-                return axios.get(`api_endpoint/${ingredientID}`);
-            })
-            .then (response => {
-                return response.data;
-            })
-            .catch(error => {
-                console.error(error);
-            });
-        }))
-        .then(response => {
-            setNutritionData(response);
-            setRequestCount(requestCount+1);
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    }, [requestCount]);
 
     const recipeData = {
         title: "Cheesecake Recipe",
@@ -72,7 +44,10 @@ const Cheesecake = () => {
             "8. Once chilled, run a knife around the edge of the pan before releasing the springform sides.",
             "9. Slice and serve your delicious homemade cheesecake!"],
         buttonLink: "/cheesecakeCooking",
-        nutritionInfo: nutritionData
+        nutritionInfo: [
+            "Protein: ",
+            "Fat: "
+        ]
         
     };
 
