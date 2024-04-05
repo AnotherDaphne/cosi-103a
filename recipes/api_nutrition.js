@@ -29,7 +29,7 @@ function App() {
           }
         }
         const requests=module.ingredients.map(ingredient => {
-        const url= "https://.../nutrition-data?app_id=YOUR_APP" // cant figure out how to get the correct url
+        const url= "https://api.nal.usda.gov/fdc/v1/foods/search"; // cant figure out how to get the correct url
         const params={
           query: ingredient,
           pageSize: 1, //  get the top matching result (not sure if this how to get it)
@@ -43,7 +43,8 @@ function App() {
         console.log(response);
         const nutritiondata= response.map(resp =>{
           const topmatchdata= res.data.foods[0]; // get top match
-          topmatchdata.detailsUrl= `https://.../food-details/${topmatchdata.fdcId}` 
+          topmatchdata.detailsUrl=  `https://fdc.nal.usda.gov/fdc-app.html#/food-details/${topmatchdata.fdcId}/nutrients`; 
+        
           return topmatchdata;
         })
         setNutritionaData(nutritiondata);
