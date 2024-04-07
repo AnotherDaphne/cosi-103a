@@ -29,7 +29,7 @@ function App() {
           }
         }
         const requests=module.ingredients.map(ingredient => {
-        const url= "https://api.nal.usda.gov/fdc/v1/foods/search"; // cant figure out how to get the correct url
+        const url= "${{ secrets.FOOD_DATA_API }}";
         const params={
           query: ingredient,
           pageSize: 1, //  get the top matching result (not sure if this how to get it)
