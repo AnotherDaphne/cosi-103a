@@ -2,8 +2,10 @@ import {Outlet} from "react-router-dom";
 import { useState } from 'react';
 import GroceryList from "./grocerylist/grocerylist";
 import AddRecipe from './addrecipe/addrecipe.js'; 
-// import RecipePage from './addrecipe/recipePage.js';
+import RecipeApp from './addrecipe/recipeAddApp.js';
 import { NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 export default function Layout() {
   const [show, setShow] = useState(false);
@@ -42,21 +44,24 @@ export default function Layout() {
               <Nav.Link variant="primary" onClick={handleShow}>
                 Grocery List
               </Nav.Link>
-              {activeComponent === 'addRecipe' && <AddRecipe recipe={newRecipe} />} {/* Only render AddRecipe if activeComponent is 'addRecipe' */}
-              <Offcanvas show={show} onHide={handleClose}>
+                {activeComponent === 'addRecipe' && <AddRecipe recipe={newRecipe} />} {/* Only render AddRecipe if activeComponent is 'addRecipe' */}
+                <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
                   <p></p>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <GroceryList >
-                    </GroceryList>
+                  <GroceryList >
+                  </GroceryList>
                 </Offcanvas.Body>
-              </Offcanvas>
-              <NavDropdown title="Add a Recipe" id="basic-nav-dropdown">
-                  <NavDropdown.Item variant="primary" onClick={handleRecipeShow}>
-                    Add Recipe
+                </Offcanvas>
+                <NavDropdown title="Add a Recipe" id="basic-nav-dropdown">
+                  <NavDropdown.Item variant="primary" onClick={handleRecipeShow} id="add-recipe-button">
+                   Add Recipe
                   </NavDropdown.Item>
-              </NavDropdown>
+                  <NavDropdown.Item as={Link} to="/recipe-app">
+                    Go to Recipe App
+                  </NavDropdown.Item>
+                </NavDropdown>
             </Nav>
             {/* // Add a button to the navigation bar that displays the title of the recipe
             // incomplete, add back once figured out how to pass data from RecipePage to Layout */}

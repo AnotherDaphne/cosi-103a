@@ -1,6 +1,6 @@
 import Recipe from './addrecipe';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
     const [recipes, setRecipes] = useState([]);
@@ -14,21 +14,21 @@ function App() {
 
     return (
         <Router>
-            <Switch>
-                <Route path="/addrecipe" component={Recipe} />
-                <Route path="/">
-                    <div>
-                        {recipes.map((recipe, index) => (
-                            <Recipe key={index} recipe={recipe} />
-                        ))}
-                        <button id="add-recipe-button" onClick={Recipe}>
-                            Add New Recipe
-                        </button>
-                    </div>
-                </Route>
-            </Switch>
+          <Routes>
+            <Route path="/addrecipe" element={<Recipe />} />
+            <Route path="/">
+              <div>
+                {recipes.map((recipe, index) => (
+                  <Recipe key={index} recipe={recipe} />
+                ))}
+                <button id="add-recipe-button" onClick={Recipe}>
+                  Add New Recipe
+                </button>
+              </div>
+            </Route>
+          </Routes>
         </Router>
-    );
+      );
     
 }
 export default App;
@@ -37,7 +37,7 @@ method: 'POST',
 headers: {
 'Content-Type': 'application/json',
 },
-body: JSON.stringify(recipeData),
+body: JSON.stringify(Recipe),
 })
 .then(response => response.json())
 .then(data => console.log('New Recipe ID:', data.id))
