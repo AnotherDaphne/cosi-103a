@@ -2,7 +2,23 @@ import React from 'react';
 import Recipe from './recipesData.js';
 import chickensalad from "./images/chickensalad.jpg";
 
+export const ingredients= [
+    {ingredient: "chicken breast"},
+    {ingredient: "salt"},
+    {ingredient: "pepper"},
+    {ingredient: "olive oil"},
+    {ingredient: "mixed salad greens(lettuce,spinach)"},
+    {ingredient: "cherry tomatoes"},
+    {ingredient: "cucumber"},
+    {ingredient: "red onion"},
+    {ingredient: "balsamic vinaigrette dressing"},
+    
+    
+
+]
+
 const Chickensalad = () => {
+
     const recipeData = {
         title: "Chicken Salad Recipe",
         heading: "Classic Chicken Salad Recipe",
