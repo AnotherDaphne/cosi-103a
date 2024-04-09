@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import useState from "react";
+import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddRecipe from './pages/addrecipe/addrecipe.js';
 import Layout from "./pages/layout.js";
 import Home from "./pages/home.js";
@@ -22,9 +23,12 @@ import WafflesCooking from "./pages/cookingModepages/wafflesCooking.js";
 import Team from "./pages/team.js";
 import NoPage from "./pages/nopage.js";
 import "./index.css";
+import RecipePage from "./pages/addrecipe/addrecipe.js";
 
+// import AddRecipe from './pages/addrecipe/addrecipe.js';
 
 export default function App() {
+  const [newRecipes] = useState([]);
   return (
     <BrowserRouter>
       <Routes>
@@ -49,15 +53,50 @@ export default function App() {
           <Route path="/addrecipe" element={<AddRecipe />} />
           {/* add this back when we have the recipe page figured out */}
           {/* <Route path="/recipe/:id" element={<Recipe />} /> */}
-          
+          <Route path="/recipes/:id" render={(props) => <RecipePage {...props} recipes={newRecipes} />} />
 
-          <Route path="*" element={<NoPage />} />
 
-        </Route>
-      </Routes>
-    </BrowserRouter>
+           <Route path="*" element={<NoPage />} />
+
+         </Route>
+       </Routes>
+     </BrowserRouter>
   );
 }
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Layout />,
+
+//     children: [
+//       { path: '/', element: <Home /> },
+//       { path: 'menemen', element: <Menemen /> },
+//       { path: 'waffles', element: <Waffles /> },
+//       { path: 'cheesecake', element: <Cheesecake /> },
+//       { path: 'chickensalad', element: <ChickenSalad /> },
+//       { path: 'kungpaochicken', element: <KungPaoChicken /> },
+//       { path: 'spaghetti', element: <Spaghetti /> },
+//       { path: 'cinnamonrolls', element: <CinnamonRolls /> },
+//       { path: 'team', element: <Team /> },
+
+//       { path: 'cheesecakeCooking', element: <CheesecakeCooking /> },
+//       { path: 'chickensaladCooking', element: <ChickensaladCooking /> },
+//       { path: 'cinnamonrollsCooking', element: <CinnamonrollsCooking /> },
+//       { path: 'spaghettiCooking', element: <SpaghettiCooking /> },
+//       { path: 'kungpaoCooking', element: <KungpaoCooking /> },
+//       { path: 'wafflesCooking', element: <WafflesCooking /> },
+//       { path: 'menemenCooking', element: <MenemenCooking /> },
+//       { path: '*', element: <NoPage /> },
+//       { path: 'recipes/:id', element: <AddRecipe />}
+
+//     ]
+//   }
+// ])
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <RouterProvider router={router} />
+// );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);

@@ -10,13 +10,14 @@ export default function Layout() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [newRecipe, setNewRecipe] = useState(null);
+  const [newRecipe, setNewRecipe] = useState([]);
   const [activeComponent, setActiveComponent] = useState('home');
   
   function handleRecipeShow() {
     let text;
     let recipe = prompt("Enter the JSON of the new recipe: ", text);
-    setNewRecipe(recipe);
+    let parsedRecipe = JSON.parse(recipe);
+    setNewRecipe(oldRecipes => [...oldRecipes, parsedRecipe]);
     setActiveComponent('addRecipe'); 
 
   };
