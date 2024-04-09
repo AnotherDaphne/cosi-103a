@@ -12,13 +12,14 @@ export default function Layout() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [newRecipe, setNewRecipe] = useState(null);
-  const [activeComponent, setActiveComponent] = useState('home');
+  const [recipeInput, setRecipeInput] = useState('');
+
+  // const [newRecipe, setNewRecipe] = useState(null);
+  // const [activeComponent, setActiveComponent] = useState('home');
   
   function handleRecipeShow() {
-    let text;
-    let recipe = prompt("Enter the JSON of the new recipe: ", text);
-    setNewRecipe(recipe);
+    let recipe = prompt("Enter the JSON of the new recipe: ");
+    setRecipeInput(recipe);
     setActiveComponent('addRecipe'); 
 
   };
@@ -58,7 +59,7 @@ export default function Layout() {
                   <NavDropdown.Item variant="primary" onClick={handleRecipeShow} id="add-recipe-button">
                    Add Recipe
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/recipe-app">
+                  <NavDropdown.Item as={Link} to="./pages/addrecipe/recipeAddApp.js">
                     Go to Recipe App
                   </NavDropdown.Item>
                 </NavDropdown>
