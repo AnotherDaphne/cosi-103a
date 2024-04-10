@@ -1,5 +1,6 @@
 import React from 'react';
 import CookingMode from './cookingModeData';
+import ''
 
 const CinnamonrollsCooking = () => {
     const slides = [
