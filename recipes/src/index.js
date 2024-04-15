@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom/client";
-import useState from "react";
-import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import AddRecipe from './pages/addrecipe/addrecipe.js';
 import Layout from "./pages/layout.js";
 import Home from "./pages/home.js";
@@ -12,6 +11,9 @@ import KungPaoChicken from "./pages/kungpaochicken.js";
 import Spaghetti from "./pages/spaghetti.js";
 import CinnamonRolls from "./pages/cinnamonrolls.js";
 
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import RecipeApp from './pages/addrecipe/recipeAddApp.js'; 
+import AddRecipe from './pages/addrecipe/addrecipe.js';
 import CheesecakeCooking from "./pages/cookingModepages/cheesecakeCooking.js";
 import ChickensaladCooking from "./pages/cookingModepages/chickensaladCooking.js";
 import CinnamonrollsCooking from "./pages/cookingModepages/cinnamonrollsCooking.js";
@@ -23,9 +25,7 @@ import WafflesCooking from "./pages/cookingModepages/wafflesCooking.js";
 import Team from "./pages/team.js";
 import NoPage from "./pages/nopage.js";
 import "./index.css";
-import RecipePage from "./pages/addrecipe/addrecipe.js";
 
-// import AddRecipe from './pages/addrecipe/addrecipe.js';
 
 export default function App() {
   const [newRecipes] = useState([]);
@@ -50,7 +50,10 @@ export default function App() {
           <Route path= "kungpaoCooking" element ={<KungpaoCooking />} />
           <Route path= "wafflesCooking" element ={<WafflesCooking />} />
           <Route path= "menemenCooking" element ={<MenemenCooking />} />
-          <Route path="/addrecipe" element={<AddRecipe />} />
+          {/* <Route path="/addrecipe" element={<AddRecipe />} /> */}
+          <Route path= "./pages/addrecipe/recipeAddApp.js" element={<RecipeApp />} />
+          <Route path="/" element={<Layout />} />
+          <Route path="/add-recipe" element={<AddRecipe />} />    
           {/* add this back when we have the recipe page figured out */}
           {/* <Route path="/recipe/:id" element={<Recipe />} /> */}
           <Route path="/recipes/:id" render={(props) => <RecipePage {...props} recipes={newRecipes} />} />

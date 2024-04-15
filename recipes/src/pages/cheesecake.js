@@ -1,8 +1,26 @@
+
 import React from 'react';
+
 import Recipe from './recipesData.js';
 import cheesecake from "./images/cheesecake.jpg";
 
+
+export const ingredients= [
+        
+    {ingredient: "graham cracker crumbs"},
+    {ingredient: "butter"},
+    {ingredient: "cream cheese"},
+    {ingredient: "white sugar"},
+    {ingredient: "vanilla extract"},
+    {ingredient: "egg"},
+    {ingredient: "heavy cream"},
+
+]
+
 const Cheesecake = () => {
+   
+
+
     const recipeData = {
         title: "Cheesecake Recipe",
         heading: "Classic Cheesecake Recipe",
@@ -27,10 +45,10 @@ const Cheesecake = () => {
             "9. Slice and serve your delicious homemade cheesecake!"],
         buttonLink: "/cheesecakeCooking",
         nutritionInfo: [
-            "Calories: 200",
-            "Fat: 10g",
-            "Protein: 5g"
+            "Protein: ",
+            "Fat: "
         ]
+        
     };
 
     return (
