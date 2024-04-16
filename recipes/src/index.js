@@ -47,7 +47,7 @@ export default function App() {
           <Route path= "wafflesCooking" element ={<WafflesCooking />} />
           <Route path= "menemenCooking" element ={<MenemenCooking />} />
           {/* <Route path="/addrecipe" element={<AddRecipe />} /> */}
-          <Route path= "./pages/addrecipe/recipeAddApp.js" element={<RecipeApp />} />
+          {/* <Route path= "./pages/addrecipe/recipeAddApp.js" element={<RecipeApp />} /> */}
           <Route path="/" element={<Layout />} />
           {/* <Route path="/add-recipe" element={<Recipe />} />     */}
           <Route path="/addrecipe" element={<Recipe />} />

@@ -1,17 +1,27 @@
 import React from 'react';
 import defaultImage from "./cheesecake.jpg";
+import { useLocation } from 'react-router-dom';
 
 
-function Recipe({ recipe }) {
-  console.log("Recipe received:", recipe);
+
+function Recipe() {
+  
+  const location = useLocation(); // Use useLocation hook to access location
+  const { state } = location; // Destructure state from location
+
+  if (!state || !state.recipeInput) {
+    return <div>No recipe found</div>; // Handle case where state or recipeInput is undefined
+  }
+
+  const { recipeInput } = state;
   let recipeObject;
   try {
-    recipeObject = JSON.parse(recipe);
+    recipeObject = JSON.parse(recipeInput);
   } catch (error) {
     console.error('Invalid JSON:', error);
     return <div>Invalid JSON</div>;
   }
-
+  console.log('Recipe found:', recipeObject);
   return (
     <div>
       <h1>{recipeObject.title}</h1>
