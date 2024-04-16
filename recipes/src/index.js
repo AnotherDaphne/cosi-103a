@@ -49,7 +49,8 @@ export default function App() {
           {/* <Route path="/addrecipe" element={<AddRecipe />} /> */}
           <Route path= "./pages/addrecipe/recipeAddApp.js" element={<RecipeApp />} />
           <Route path="/" element={<Layout />} />
-          <Route path="/add-recipe" element={<Recipe />} />    
+          {/* <Route path="/add-recipe" element={<Recipe />} />     */}
+          <Route path="/addrecipe" element={<Recipe />} />
           {/* add this back when we have the recipe page figured out */}
           {/* <Route path="/recipe/:id" element={<Recipe />} /> */}
           

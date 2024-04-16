@@ -2,7 +2,7 @@ import {Outlet} from "react-router-dom";
 import { useState } from 'react';
 import GroceryList from "./grocerylist/grocerylist";
 import Recipe from './addrecipe/addrecipe.js'; 
-//import RecipeApp from './addrecipe/recipeAddApp.js';
+import RecipeApp from './addrecipe/recipeAddApp.js';
 // import { Recipe } from './addrecipe/addrecipe.js';
 import { NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,10 @@ export default function Layout() {
   const handleAddRecipe = () => {
     const recipeJson = prompt("Enter the JSON of the new recipe: ");
     setRecipeInput(recipeJson);
+    // history.push("/recipe"); //need to change link here?
   };
+
+  // const history = useHistory();
 
   // const [newRecipe, setNewRecipe] = useState(null);
   // const [activeComponent, setActiveComponent] = useState('home');
@@ -71,7 +74,7 @@ export default function Layout() {
                    Add Recipe
                   </NavDropdown.Item>
                   {recipeInput && <Recipe recipe={recipeInput} />}
-                  <NavDropdown.Item as={Link} to="./pages/addrecipe/recipeAddApp.js">
+                  <NavDropdown.Item as={Link} to={RecipeApp}>
                     Go to Recipe App
                   </NavDropdown.Item>
                 </NavDropdown>
