@@ -1,5 +1,4 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Layout from "./pages/layout.js";
 import Home from "./pages/home.js";
 import Menemen from "./pages/menemen.js";
@@ -10,6 +9,8 @@ import KungPaoChicken from "./pages/kungpaochicken.js";
 import Spaghetti from "./pages/spaghetti.js";
 import CinnamonRolls from "./pages/cinnamonrolls.js";
 
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import Recipe from './pages/addrecipe/addrecipe.js';
 import CheesecakeCooking from "./pages/cookingModepages/cheesecakeCooking.js";
 import ChickensaladCooking from "./pages/cookingModepages/chickensaladCooking.js";
 import CinnamonrollsCooking from "./pages/cookingModepages/cinnamonrollsCooking.js";
@@ -44,6 +45,13 @@ export default function App() {
           <Route path= "kungpaoCooking" element ={<KungpaoCooking />} />
           <Route path= "wafflesCooking" element ={<WafflesCooking />} />
           <Route path= "menemenCooking" element ={<MenemenCooking />} />
+          {/* <Route path="/addrecipe" element={<AddRecipe />} /> */}
+          {/* <Route path= "./pages/addrecipe/recipeAddApp.js" element={<RecipeApp />} /> */}
+          <Route path="/" element={<Layout />} />
+          {/* <Route path="/add-recipe" element={<Recipe />} />     */}
+          <Route path="/addrecipe" element={<Recipe />} />
+          {/* add this back when we have the recipe page figured out */}
+          {/* <Route path="/recipe/:id" element={<Recipe />} /> */}
           
 
           <Route path="*" element={<NoPage />} />
