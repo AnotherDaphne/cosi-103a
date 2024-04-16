@@ -18,32 +18,7 @@ export default function Layout() {
   const handleAddRecipe = () => {
     const recipeJson = prompt("Enter the JSON of the new recipe: ");
     setRecipeInput(recipeJson);
-    // history.push("/recipe"); //need to change link here?
   };
-
-  // const history = useHistory();
-
-  // const [newRecipe, setNewRecipe] = useState(null);
-  // const [activeComponent, setActiveComponent] = useState('home');
-  
-  // function handleRecipeShow() {
-  //   let recipe = prompt("Enter the JSON of the new recipe: ");
-  //   setRecipeInput(recipe);
-  //   setActiveComponent('addRecipe'); 
-    
-
-//   // };
-//   function handleRecipeShow() {
-//     let recipe = prompt("Enter the JSON of the new recipe: ");
-//     Recipe(recipe); // Call the function in addrecipe.js
-// };
-
-  
-  // const [recipeData, setRecipeData] = useState(null);
-
-  // const handleRecipeData = (data) => {
-  //   setRecipeData(data);
-  // };
 
   
 // Add a navigation bar to the layout
@@ -73,9 +48,9 @@ export default function Layout() {
                   <NavDropdown.Item variant="primary" onClick={handleAddRecipe} id="add-recipe-button">
                    Add Recipe
                   </NavDropdown.Item>
-                  {recipeInput && <Recipe recipe={recipeInput} />}
-                  <NavDropdown.Item as={Link} to={RecipeApp}>
-                    Go to Recipe App
+                  {/* {recipeInput && <Recipe recipe={recipeInput} />} */}
+                  <NavDropdown.Item as={Link} to={{ pathname: "/addrecipe", state: { recipeInput } }}>
+                    View Recipe
                   </NavDropdown.Item>
                 </NavDropdown>
             </Nav>
