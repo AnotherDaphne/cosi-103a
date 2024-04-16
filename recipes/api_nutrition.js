@@ -1,6 +1,11 @@
 // get the nutrition information of the ingredients of a recipe.
 
 
+/**
+ * I tried different implementations to connect this api to recipe pages and make it work
+ * but none of them worked so I am pushing this comment to main instead
+ * it was hard for me to work alone on this 
+ */
 
 //add sth to make sure 1000 requirest max- how to test this?
 import React, { useState, useEffect } from 'react';
