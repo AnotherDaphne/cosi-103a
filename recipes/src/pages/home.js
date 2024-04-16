@@ -38,7 +38,7 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Belgian Waffles</Card.Title>
                   <Card.Text>
-                    Description of recipe
+                    Delicious Pile of Waffles
                   </Card.Text>
                     <Link to="/waffles">
                         <Button>Go To Recipe</Button>
@@ -77,7 +77,7 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Kung Pao Chicken</Card.Title>
                   <Card.Text>
-                    Description of recipe
+                    Tasty chicken, rice, and vegetables
                   </Card.Text>
                   <Link to="/kungpaochicken">
                       <Button>Go To Recipe</Button>
@@ -89,7 +89,7 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Cinnamon Rolls</Card.Title>
                   <Card.Text>
-                    Description of recipe
+                    A delicous cinnamon treat
                   </Card.Text>
                   <Link to="/cinnamonrolls">
                       <Button>Go To Recipe</Button>
@@ -101,7 +101,7 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title>Shrimp Aglio Olio</Card.Title>
                   <Card.Text>
-                    Description of recipe
+                    Tasty spaghetti, shrimp, and spice
                   </Card.Text>
                   <Link to="/spaghetti">
                       <Button>Go To Recipe</Button>
