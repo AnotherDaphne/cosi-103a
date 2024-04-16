@@ -6,6 +6,7 @@ import Recipe from './addrecipe/addrecipe.js';
 // import { Recipe } from './addrecipe/addrecipe.js';
 import { NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 
 export default function Layout() {
@@ -15,9 +16,12 @@ export default function Layout() {
   const [activeComponent, setActiveComponent] = useState('');
 
   const [recipeInput, setRecipeInput] = useState('');
+  const navigate = useNavigate();
   const handleAddRecipe = () => {
     const recipeJson = prompt("Enter the JSON of the new recipe: ");
     setRecipeInput(recipeJson);
+
+    navigate(`/addrecipe?recipeInput=${encodeURIComponent(recipeJson)}`);
   };
 
   
@@ -49,7 +53,7 @@ export default function Layout() {
                    Add Recipe
                   </NavDropdown.Item>
                   {/* {recipeInput && <Recipe recipe={recipeInput} />} */}
-                  <NavDropdown.Item as={Link} to={{ pathname: "/addrecipe", state: { recipeInput } }}>
+                  <NavDropdown.Item as={Link} to="/addrecipe">
                     View Recipe
                   </NavDropdown.Item>
                 </NavDropdown>
