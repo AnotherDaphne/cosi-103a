@@ -3,6 +3,7 @@ import defaultImage from "./cheesecake.jpg";
 
 
 function Recipe({ recipe }) {
+  console.log("Recipe received:", recipe);
   let recipeObject;
   try {
     recipeObject = JSON.parse(recipe);

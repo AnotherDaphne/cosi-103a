@@ -11,7 +11,7 @@ import CinnamonRolls from "./pages/cinnamonrolls.js";
 
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import RecipeApp from './pages/addrecipe/recipeAddApp.js'; 
-import AddRecipe from './pages/addrecipe/addrecipe.js';
+import Recipe from './pages/addrecipe/addrecipe.js';
 import CheesecakeCooking from "./pages/cookingModepages/cheesecakeCooking.js";
 import ChickensaladCooking from "./pages/cookingModepages/chickensaladCooking.js";
 import CinnamonrollsCooking from "./pages/cookingModepages/cinnamonrollsCooking.js";
@@ -49,7 +49,7 @@ export default function App() {
           {/* <Route path="/addrecipe" element={<AddRecipe />} /> */}
           <Route path= "./pages/addrecipe/recipeAddApp.js" element={<RecipeApp />} />
           <Route path="/" element={<Layout />} />
-          <Route path="/add-recipe" element={<AddRecipe />} />    
+          <Route path="/add-recipe" element={<Recipe />} />    
           {/* add this back when we have the recipe page figured out */}
           {/* <Route path="/recipe/:id" element={<Recipe />} /> */}
           

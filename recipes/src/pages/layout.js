@@ -1,8 +1,9 @@
 import {Outlet} from "react-router-dom";
 import { useState } from 'react';
 import GroceryList from "./grocerylist/grocerylist";
-import AddRecipe from './addrecipe/addrecipe.js'; 
-import RecipeApp from './addrecipe/recipeAddApp.js';
+import Recipe from './addrecipe/addrecipe.js'; 
+//import RecipeApp from './addrecipe/recipeAddApp.js';
+// import { Recipe } from './addrecipe/addrecipe.js';
 import { NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -11,18 +12,28 @@ export default function Layout() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [activeComponent, setActiveComponent] = useState('');
 
   const [recipeInput, setRecipeInput] = useState('');
+  const handleAddRecipe = () => {
+    const recipeJson = prompt("Enter the JSON of the new recipe: ");
+    setRecipeInput(recipeJson);
+  };
 
   // const [newRecipe, setNewRecipe] = useState(null);
   // const [activeComponent, setActiveComponent] = useState('home');
   
-  function handleRecipeShow() {
-    let recipe = prompt("Enter the JSON of the new recipe: ");
-    setRecipeInput(recipe);
-    setActiveComponent('addRecipe'); 
+  // function handleRecipeShow() {
+  //   let recipe = prompt("Enter the JSON of the new recipe: ");
+  //   setRecipeInput(recipe);
+  //   setActiveComponent('addRecipe'); 
+    
 
-  };
+//   // };
+//   function handleRecipeShow() {
+//     let recipe = prompt("Enter the JSON of the new recipe: ");
+//     Recipe(recipe); // Call the function in addrecipe.js
+// };
 
   
   // const [recipeData, setRecipeData] = useState(null);
@@ -45,7 +56,7 @@ export default function Layout() {
               <Nav.Link variant="primary" onClick={handleShow}>
                 Grocery List
               </Nav.Link>
-                {activeComponent === 'addRecipe' && <AddRecipe recipe={newRecipe} />} {/* Only render AddRecipe if activeComponent is 'addRecipe' */}
+              {activeComponent === 'addRecipe' && <Recipe recipe={recipeInput} />}
                 <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
                   <p></p>
@@ -56,9 +67,10 @@ export default function Layout() {
                 </Offcanvas.Body>
                 </Offcanvas>
                 <NavDropdown title="Add a Recipe" id="basic-nav-dropdown">
-                  <NavDropdown.Item variant="primary" onClick={handleRecipeShow} id="add-recipe-button">
+                  <NavDropdown.Item variant="primary" onClick={handleAddRecipe} id="add-recipe-button">
                    Add Recipe
                   </NavDropdown.Item>
+                  {recipeInput && <Recipe recipe={recipeInput} />}
                   <NavDropdown.Item as={Link} to="./pages/addrecipe/recipeAddApp.js">
                     Go to Recipe App
                   </NavDropdown.Item>
