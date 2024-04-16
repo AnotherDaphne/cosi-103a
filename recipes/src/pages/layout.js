@@ -2,10 +2,7 @@ import {Outlet} from "react-router-dom";
 import { useState } from 'react';
 import GroceryList from "./grocerylist/grocerylist";
 import Recipe from './addrecipe/addrecipe.js'; 
-// import RecipeApp from './addrecipe/recipeAddApp.js';
-// import { Recipe } from './addrecipe/addrecipe.js';
 import { NavDropdown, Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 
@@ -20,8 +17,12 @@ export default function Layout() {
   const handleAddRecipe = () => {
     const recipeJson = prompt("Enter the JSON of the new recipe: ");
     setRecipeInput(recipeJson);
-
-    navigate(`/addrecipe?recipeInput=${encodeURIComponent(recipeJson)}`);
+  };
+  const handleViewRecipe = () => {
+    if (recipeInput) {
+      //navigates to the addrecipe page only if recipeInput is not empty
+      window.location.href = `/addrecipe?recipeInput=${encodeURIComponent(recipeInput)}`;
+    }
   };
 
   
@@ -53,15 +54,11 @@ export default function Layout() {
                    Add Recipe
                   </NavDropdown.Item>
                   {/* {recipeInput && <Recipe recipe={recipeInput} />} */}
-                  <NavDropdown.Item as={Link} to="/addrecipe">
+                  <NavDropdown.Item onClick={handleViewRecipe}>
                     View Recipe
                   </NavDropdown.Item>
                 </NavDropdown>
             </Nav>
-            {/* // Add a button to the navigation bar that displays the title of the recipe
-            // incomplete, add back once figured out how to pass data from RecipePage to Layout */}
-            {/* {recipeData && <Button>{recipeData.title}</Button>}
-            <RecipePage onRecipeData={handleRecipeData} /> */}
 
           </Container>
         </Navbar>

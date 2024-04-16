@@ -5,14 +5,14 @@ import { useLocation } from 'react-router-dom';
 
 
 function Recipe() {
-  const location = useLocation(); // Use useLocation hook to access location
+  const location = useLocation(); //use useLocation hook to access location
   const params = new URLSearchParams(location.search);
   const recipeInput = params.get('recipeInput');
 
   if (!recipeInput) {
-    return <div>No recipe found</div>; // Handle case where recipeInput is undefined
+    return <div>No recipe found</div>; //handles case where recipeInput is undefined
   }
-  
+
   let recipeObject;
   try {
     recipeObject = JSON.parse(recipeInput);
